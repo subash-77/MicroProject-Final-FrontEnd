@@ -311,7 +311,7 @@ const CarePlan = () => {
           console.log('Fetched care plans:', JSON.stringify(response.data, null, 2));
           const matchedRecords = response.data.map((plan) => {
             const item = items.find((i) => i.id === parseInt(plan.carecardId));
-            return { ...plan, ...item }; // Merge care plan data with item data
+            return { ...plan, ...item }; 
           });
           setRecords(matchedRecords);
         })
@@ -333,24 +333,24 @@ const CarePlan = () => {
 
   const markAsCompleted = () => {
     if (selectedRecord) {
-      // Prepare the payload with additional parameters
+      
       const payload = {
         status: 'Completed',
         patientId : selectedRecord.patientId,
         carecardId: selectedRecord.carecardId,
-        psychiatristId: selectedRecord.psychiatristId, // Assuming this is part of the selectedRecord
-        careplanId: selectedRecord.careplanId // Assuming this is part of the selectedRecord
+        psychiatristId: selectedRecord.psychiatristId, 
+        careplanId: selectedRecord.careplanId 
       };
   
-      // Update local state
+      
       const updatedRecords = records.map((rec) =>
         rec.careplanId === selectedRecord.careplanId ? { ...rec, status: 'Completed' } : rec
       );
   
-      // Update local state with new status
+      
       setRecords(updatedRecords);
   
-      // Send updated status and additional parameters to backend
+      
 
       console.log(payload);
       axios

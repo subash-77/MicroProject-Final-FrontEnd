@@ -707,7 +707,7 @@ const BookAppointment = () => {
         age: '',
         amount: '',
         paymentType: '',
-        name: '' // Added 'name' here
+        name: '' 
     });
     const [weekDates, setWeekDates] = useState([]);
     const [isProcessing, setIsProcessing] = useState(false);
@@ -763,10 +763,10 @@ const BookAppointment = () => {
         for (let i = 0; i < 7; i++) {
             const date = new Date(today);
             date.setDate(today.getDate() + i);
-            const formattedDate = date.toISOString().split('T')[0]; // Format YYYY-MM-DD
+            const formattedDate = date.toISOString().split('T')[0]; 
             dates.push({
                 date: formattedDate,
-                label: formattedDate // Display in YYYY-MM-DD format
+                label: formattedDate 
             });
         }
 
@@ -777,7 +777,7 @@ const BookAppointment = () => {
         const { name, value } = e.target;
 
         if (name === 'age' && value < 0) {
-            return; // Prevent updating the state with negative values
+            return; 
         }
 
         if (name === 'appointmentDate') {
@@ -811,7 +811,7 @@ const BookAppointment = () => {
     };
 
     const renderSlotOptions = () => {
-        // Default slot times
+       
         const defaultSlots = {
             slot1: "10 - 11 AM",
             slot2: "2 - 3 PM",
@@ -830,6 +830,7 @@ const BookAppointment = () => {
         // Render slots based on slotAvailable data
         return Object.entries(defaultSlots).map(([slotKey, time]) => {
             const isAvailable = slotAvailable[slotKey] >= 1;
+            
             return (
                 <option
                     key={slotKey}
@@ -845,8 +846,8 @@ const BookAppointment = () => {
     const simulatePaymentProcessing = () => {
         return new Promise((resolve) => {
             setTimeout(() => {
-                resolve(true); // Simulate successful payment
-            }, 5000); // Simulate a 5-second payment process
+                resolve(true); 
+            }, 5000); 
         });
     };
 

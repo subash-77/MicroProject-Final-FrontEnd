@@ -91,7 +91,7 @@ import { Pie } from 'react-chartjs-2';
 import { Chart as ChartJS, Title, Tooltip, Legend, ArcElement } from 'chart.js';
 import { motion } from 'framer-motion';
 
-// Register necessary components
+
 ChartJS.register(Title, Tooltip, Legend, ArcElement);
 
 const Dashboard = () => {
@@ -136,7 +136,7 @@ const Dashboard = () => {
     );
   };
 
-  // Data preparation for charts
+  
   const paymentData = records.flatMap(record => record.appointment.map(app => app.payment));
   const paymentAmounts = paymentData.map(payment => parseFloat(payment.amount));
   const paymentTypes = paymentData.map(payment => payment.paymentType);
@@ -174,7 +174,7 @@ const Dashboard = () => {
       },
       tooltip: {
         callbacks: {
-          label: (tooltipItem) => `${tooltipItem.label}: ${tooltipItem.raw} USD`
+          label: (tooltipItem) => `${tooltipItem.label}: ${tooltipItem.raw} Rupees`
         }
       }
     }

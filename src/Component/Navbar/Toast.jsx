@@ -4,7 +4,7 @@ const Toast = ({ message, onClose }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       onClose();
-    }, 5000); // Toast will be visible for 5 seconds
+    }, 5000); 
 
     return () => clearTimeout(timer);
   }, [onClose]);

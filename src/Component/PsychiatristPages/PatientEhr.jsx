@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import Modal from 'react-modal';
 
-// Ensure you call `Modal.setAppElement` to prevent screen readers from reading the background content
+
 Modal.setAppElement('#root');
 
 const PatientEhr = () => {
@@ -64,7 +64,7 @@ const PatientEhr = () => {
   };
 
   const openHistoryModal = () => {
-    // Hardcoded patient history details
+    
     const historyDetails = `
 Patient History:
 

@@ -333,7 +333,7 @@
 
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import Modal from './Modal'; // Import the modal component
+import Modal from './Modal'; 
 import { motion } from 'framer-motion';
 
 const PsychiatristRecords = () => {

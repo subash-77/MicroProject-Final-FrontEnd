@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Modal from '../AdminPages/Modal'; // Adjust the path as necessary
-import Card from './Card'; // Adjust the path as necessary
+import Modal from '../AdminPages/Modal'; 
+import Card from './Card'; 
 
 const items = [
   {

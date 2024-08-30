@@ -1,5 +1,5 @@
 import React from 'react';
-import { XIcon, CheckCircleIcon } from '@heroicons/react/solid'; // Import Heroicons
+import { XIcon, CheckCircleIcon } from '@heroicons/react/solid'; 
 
 const SuccessModal = ({ isOpen, onClose, title, content, showSuccessIcon }) => {
   if (!isOpen) return null;

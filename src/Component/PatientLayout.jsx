@@ -1,10 +1,10 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
-import { useLocation } from 'react-router-dom'; // Import useLocation hook
+import { useLocation } from 'react-router-dom'; 
 import PatientNavbar from './Navbar/PatientNavbar';
 
 const PatientLayout = () => {
-  const location = useLocation(); // Get the current location
+  const location = useLocation(); 
 
 
 

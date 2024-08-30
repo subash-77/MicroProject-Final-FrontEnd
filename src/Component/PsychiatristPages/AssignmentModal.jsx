@@ -4,13 +4,13 @@ import axios from 'axios';
 const AssignmentModal = ({ isOpen, onClose, itemId, psychiatristId }) => {
     const [patients, setPatients] = useState([]);
     const [selectedPatient, setSelectedPatient] = useState('');
-    const [isSuccess, setIsSuccess] = useState(false); // New state for tracking success
+    const [isSuccess, setIsSuccess] = useState(false); 
 
     const carecardId = itemId;
 
     useEffect(() => {
-        if (isOpen && !isSuccess) { // Fetch patients only if the modal is open and no success message is shown
-            axios.get("http://localhost:1225/admin/allPatients") // Adjust the endpoint as needed
+        if (isOpen && !isSuccess) { 
+            axios.get("http://localhost:1225/admin/allPatients") 
                 .then(response => {
                     const patientList = response.data.map(user => ({
                         id: user.userId,
@@ -37,14 +37,14 @@ const AssignmentModal = ({ isOpen, onClose, itemId, psychiatristId }) => {
         })
             .then(response => {
                 console.log('Assignment successful:', response.data);
-                setIsSuccess(true); // Update state to show success message
+                setIsSuccess(true); 
             })
             .catch(error => console.error('Error assigning item:', error));
     };
 
     const handleCloseSuccessModal = () => {
-        setIsSuccess(false); // Reset success state
-        onClose(); // Close the modal
+        setIsSuccess(false); 
+        onClose(); 
     };
 
     return (

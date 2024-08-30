@@ -1296,7 +1296,7 @@ const Modal = ({ isOpen, onClose, profile, onUpdate }) => {
   };
 
   const handleUpdate = () => {
-    if (!validateForm()) return; // Stop if validation fails
+    if (!validateForm()) return; 
 
     if (newPassword && newPassword !== confirmNewPassword) {
       setErrorMessage('New passwords do not match');
@@ -1316,10 +1316,10 @@ const Modal = ({ isOpen, onClose, profile, onUpdate }) => {
     axios.put(`http://localhost:1225/psychiatrist/psychiatrist/${profileData.psychiatristId}`, updatedProfileData)
       .then(response => {
         console.log("Update successful:", response.data);
-        onUpdate(response.data); // Update parent component with new data
-        setSuccessMessage("Profile updated successfully."); // Set success message
-        setEditMode(false); // Exit edit mode
-        setTimeout(() => setSuccessMessage(''), 5000); // Clear success message after 5 seconds
+        onUpdate(response.data); 
+        setSuccessMessage("Profile updated successfully."); 
+        setEditMode(false); 
+        setTimeout(() => setSuccessMessage(''), 5000); 
       })
       .catch(err => {
         console.error("Update failed:", err);

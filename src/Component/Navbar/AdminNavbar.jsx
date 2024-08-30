@@ -353,9 +353,9 @@ import { Link, Outlet, useNavigate } from 'react-router-dom';
 import { FaBell, FaSignOutAlt, FaUser } from "react-icons/fa";
 import { IoIosArrowDown } from "react-icons/io";
 import axios from "axios";
-import AdminProfileUpdate from './AdminProfileUpdate'; // Import the new modal component
+import AdminProfileUpdate from './AdminProfileUpdate'; 
 
-// Modal component (as defined earlier)
+
 const Modal = ({ isOpen, onClose, message }) => {
   if (!isOpen) return null;
 
@@ -384,7 +384,7 @@ const AdminNavbar = () => {
   const [showModal, setShowModal] = useState(false);
   const [modalMessage, setModalMessage] = useState('');
   const [profile, setProfile] = useState(null); 
-  const [showProfileModal, setShowProfileModal] = useState(false); // State for profile update modal
+  const [showProfileModal, setShowProfileModal] = useState(false); 
   const navigate = useNavigate();
 
   const Menus = [

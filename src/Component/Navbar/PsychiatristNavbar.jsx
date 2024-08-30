@@ -34,12 +34,12 @@ const PsychiatristNavbar = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
   const [columns, setColumns] = useState([]);
   const [records, setRecords] = useState([]);
-  const [notificationCount, setNotificationCount] = useState(0); // State for notifications
-  const [profile, setProfile] = useState(null); // State for profile data
+  const [notificationCount, setNotificationCount] = useState(0); 
+  const [profile, setProfile] = useState(null); 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [showToast, setShowToast] = useState(false);
-  const [showModal, setShowModal] = useState(false); // State for modal visibility
-  const [modalMessage, setModalMessage] = useState(''); // State for modal message
+  const [showModal, setShowModal] = useState(false); 
+  const [modalMessage, setModalMessage] = useState(''); 
   const navigate = useNavigate();
   const id = sessionStorage.getItem('psyid');
 
@@ -126,7 +126,7 @@ const PsychiatristNavbar = () => {
   };
 
   const handleBellClick = () => {
-    navigate('/viewassignedappointment'); // Navigate to ViewAppointment component
+    navigate('/viewassignedappointment'); 
   };
 
   const handleProfileClick = () => {
@@ -235,7 +235,7 @@ const PsychiatristNavbar = () => {
         </div>
 
         {/* Rendered Content Area */}
-        <main className="flex-1 overflow-auto mt-16"> {/* Adjust mt-16 based on top bar height */}
+        <main className="flex-1 overflow-auto mt-16"> 
           <Outlet /> {/* This is where the route components will be rendered */}
         </main>
       </div>

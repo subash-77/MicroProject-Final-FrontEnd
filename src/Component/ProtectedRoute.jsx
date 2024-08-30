@@ -15,12 +15,12 @@ const ProtectedRoute = ({ element, requiredRole }) => {
   const userRole = sessionStorage.getItem('role');
 
   if (!token) {
-    // If no token, redirect to login
+    
     return <Navigate to="/login" />;
   }
 
   if (userRole !== requiredRole) {
-    // If role doesn't match, redirect to home or an unauthorized page
+    
     return <Navigate to="/" />;
   }
 

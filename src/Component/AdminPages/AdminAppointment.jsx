@@ -793,9 +793,9 @@ const AdminAppointment = () => {
   const [records, setRecords] = useState([]);
   const [filteredRecords, setFilteredRecords] = useState([]);
   const [selectedRecord, setSelectedRecord] = useState(null);
-  const [modalType, setModalType] = useState(null); // "patientInfo" or "payment"
+  const [modalType, setModalType] = useState(null); 
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [statusFilter, setStatusFilter] = useState('all'); // 'all', 'scheduled', 'cancel', 'waiting'
+  const [statusFilter, setStatusFilter] = useState('all'); 
   const [isLoading, setIsLoading] = useState(false);
   const [successMessage, setSuccessMessage] = useState('');
 
@@ -883,14 +883,14 @@ const AdminAppointment = () => {
             record.appointmentId === appointmentId ? updatedRecord : record
           ));
 
-          // Fetch psychiatrist data to update slots
+       
           return axios.get(`http://localhost:1225/psychiatrist/${recordToUpdate.psychiatristId}`);
         })
         .then(response => {
           console.log("Psychiatrist Data:", JSON.stringify(response.data, null, 2));
           const psychiatristData = response.data;
 
-          // Fetch the current slot availability
+          
           return axios.get("http://localhost:1225/psychiatrist/getSlotWithavailableDatepsychiaId", {
             params: {
               availableDate: recordToUpdate.appointmentDate,
@@ -902,8 +902,8 @@ const AdminAppointment = () => {
           console.log("Response from getSlotWithavailableDatepsychiaId:", response.data);
           const availability = response.data;
 
-          // Extract and decrement the slot count only if greater than 0
-          let { slot1 = 3, slot2 = 3, slot3 = 3 } = availability; // Default to 3 if undefined
+          
+          let { slot1 = 3, slot2 = 3, slot3 = 3 } = availability; 
 
           if (recordToUpdate.appointmentSlot === 'slot1' && slot1 > 0) {
             slot1 -= 1;
@@ -923,7 +923,7 @@ const AdminAppointment = () => {
 
           console.log("Updated Psychiatrist Availability:", psychiatristAvailability);
 
-          // Update psychiatrist availability
+          
           return axios.post("http://localhost:1225/psychiatrist/addPsychiatristAvailablility", psychiatristAvailability);
         })
         .then(() => {

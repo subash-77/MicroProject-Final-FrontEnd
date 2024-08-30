@@ -6,7 +6,7 @@ const AdminProfileUpdate = ({ isOpen, onClose, profileData }) => {
     userId: profileData.userId || '',
     userName: profileData.userName || '',
     email: profileData.email || '',
-    password: profileData.password || '', // Store current password for verification
+    password: profileData.password || '', 
     role: profileData.role || '',
   });
 
@@ -75,11 +75,11 @@ const AdminProfileUpdate = ({ isOpen, onClose, profileData }) => {
     // Update user profile with new password
     axios.put(`http://localhost:1225/admin`, {
       ...formData,
-      password: newPassword || formData.password, // Use new password if provided
+      password: newPassword || formData.password, 
     })
       .then((response) => {
         alert('Profile updated successfully');
-        onClose(); // Close the modal after successful update
+        onClose(); 
       })
       .catch((error) => {
         console.error('Error updating profile', error);

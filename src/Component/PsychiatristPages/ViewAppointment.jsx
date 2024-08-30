@@ -257,20 +257,20 @@
 
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import Modal from '../AdminPages/Modal'; // Import the modal component
+import Modal from '../AdminPages/Modal'; 
 import { useNavigate } from 'react-router-dom';
 
 const ViewAppointment = () => {
   const [columns, setColumns] = useState([]);
   const [records, setRecords] = useState([]);
   const [selectedRecord, setSelectedRecord] = useState(null);
-  const [modalType, setModalType] = useState(null); // "patientInfo" or "patientHistory"
+  const [modalType, setModalType] = useState(null); 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalContent, setModalContent] = useState('');
   const navigate = useNavigate();
   const id = sessionStorage.getItem('psyid');
 
-  // Example patient history details
+  
   const exampleHistoryDetails = `
 Patient History:
 
@@ -295,7 +295,7 @@ Prescription: No prescriptions
       .get(`http://localhost:1225/psychiatrist/findappointment/${id}`)
       .then((response) => {
         if (response.data.length > 0) {
-          // Filter out 'psychiatristId', 'payment', and 'Action' columns
+          
           const initialColumns = Object.keys(response.data[0])
             .filter(column => column !== 'psychiatristId' && column !== 'payment' && column !== 'Action');
           setColumns(initialColumns);
@@ -313,7 +313,7 @@ Prescription: No prescriptions
     setIsModalOpen(true);
 
     if (type === 'patientInfo') {
-      // Display patient information from the selected record
+      
       const { name, age, gender, phoneNo } = record.patientInfo;
       const patientInfo = `
 Name: ${name}
@@ -323,7 +323,7 @@ Phone No: ${phoneNo}
       `;
       setModalContent(patientInfo);
     } else if (type === 'patientHistory') {
-      // Display predefined patient history details
+      
       setModalContent(exampleHistoryDetails);
     }
   };

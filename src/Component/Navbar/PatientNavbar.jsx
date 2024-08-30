@@ -252,10 +252,10 @@ const PatientNavbar = () => {
   const [showToast, setShowToast] = useState(false);
   const [isTokenValid, setIsTokenValid] = useState(true);
   const [isLoggedIn, setIsLoggedIn] = useState(true);
-  const [showModal, setShowModal] = useState(false); // State for modal visibility
-  const [modalMessage, setModalMessage] = useState(''); // State for modal message
-  const [isProfileModalOpen, setIsProfileModalOpen] = useState(false); // State for profile update modal
-  const [profileData, setProfileData] = useState({}); // State for profile data
+  const [showModal, setShowModal] = useState(false); 
+  const [modalMessage, setModalMessage] = useState(''); 
+  const [isProfileModalOpen, setIsProfileModalOpen] = useState(false); 
+  const [profileData, setProfileData] = useState({}); 
   const navigate = useNavigate();
   const id = sessionStorage.getItem('patientid');
 

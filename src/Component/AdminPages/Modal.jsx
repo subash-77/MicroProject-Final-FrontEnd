@@ -1,5 +1,5 @@
 import React from 'react';
-import { AiOutlineClose } from 'react-icons/ai'; // Import the close icon from react-icons
+import { AiOutlineClose } from 'react-icons/ai'; 
 
 const Modal = ({ isOpen, onClose, title, content }) => {
   if (!isOpen) return null;

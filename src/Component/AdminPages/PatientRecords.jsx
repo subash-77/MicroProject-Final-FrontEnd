@@ -242,7 +242,7 @@
 
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import Modal from './Modal'; // Ensure you have a Modal component
+import Modal from './Modal'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { motion } from 'framer-motion';
@@ -359,7 +359,7 @@ const PatientRecords = () => {
             <p className="text-sm" ><strong>PatientId:</strong> {record.userId}</p>
             <p className="text-sm"><strong>Email:</strong> {record.email}</p>
             <button
-              onClick={() => openModal(record.appointment[0])} // Assuming one appointment per patient
+              onClick={() => openModal(record.appointment[0])} 
               className="mt-4 px-4 text-sm py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors duration-300"
             >
               View Appointment Details
